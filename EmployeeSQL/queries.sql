@@ -79,4 +79,9 @@ WHERE departments.dept_name IN ('Sales', 'Development');
     -- 137,952 results
 
 -- 8. Frequency counts in descending order of all employee last names
-
+SELECT last_name
+    , count(last_name)
+FROM employees
+GROUP BY last_name
+ORDER BY count(last_name) DESC;
+    -- 1,638 different last names
