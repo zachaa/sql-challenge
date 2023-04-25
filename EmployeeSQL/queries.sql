@@ -54,9 +54,29 @@ WHERE first_name = 'Hercules'
     -- 20 results
 
 -- 6. Employees in 'Sales' employee number, last, first
-
+SELECT employees.emp_no
+    , employees.last_name
+    , employees.first_name
+FROM employees
+INNER JOIN dept_emp ON
+    employees.emp_no = dept_emp.emp_no
+INNER JOIN departments ON
+    departments.dept_no = dept_emp.dept_no
+WHERE departments.dept_name = 'Sales';
+    -- 52,245 results
 
 -- 7. Employees in 'Sales' & 'Development' employee number, last, first, department name
-
+SELECT employees.emp_no
+    , employees.last_name
+    , employees.first_name
+    , departments.dept_name
+FROM employees
+INNER JOIN dept_emp ON
+    employees.emp_no = dept_emp.emp_no
+INNER JOIN departments ON
+    departments.dept_no = dept_emp.dept_no
+WHERE departments.dept_name IN ('Sales', 'Development');
+    -- 137,952 results
 
 -- 8. Frequency counts in descending order of all employee last names
+
