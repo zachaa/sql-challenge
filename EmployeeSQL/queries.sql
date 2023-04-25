@@ -45,9 +45,18 @@ INNER JOIN departments ON
     -- 331,603 results
 
 -- 5. First, last, sex for each employee where first='Hercules' & last starts with 'B'
+SELECT first_name
+    , last_name
+    , sex
+FROM employees
+WHERE first_name = 'Hercules'
+    AND last_name LIKE 'B%';
+    -- 20 results
 
 -- 6. Employees in 'Sales' employee number, last, first
 
+
 -- 7. Employees in 'Sales' & 'Development' employee number, last, first, department name
+
 
 -- 8. Frequency counts in descending order of all employee last names
