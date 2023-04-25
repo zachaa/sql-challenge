@@ -30,6 +30,7 @@ INNER JOIN departments ON
     dept_manager.dept_no = departments.dept_no
 INNER JOIN employees ON
     dept_manager.emp_no = employees.emp_no;
+    -- 24 results
 
 -- 4. Department Number for each employee, employee number, last, first, department name
 SELECT dept_emp.dept_no
